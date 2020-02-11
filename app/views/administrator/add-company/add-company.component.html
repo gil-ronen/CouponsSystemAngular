@@ -1,0 +1,43 @@
+<div class="row  pl-5 pb-1 pr-5">
+    <div class="col-10">
+        <form>
+            <div class="row">
+                <div class="col-2">
+                    <label>Company name:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Company name" [(ngModel)]="companyToAdd.name"
+                            [ngModelOptions]="{standalone: true}" name="name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Email:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email" [(ngModel)]="companyToAdd.email"
+                            [ngModelOptions]="{standalone: true}" name="email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Password:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="companyToAdd.password"
+                            [ngModelOptions]="{standalone: true}" name="ConfirmPassword">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button type="button" (click)=addCompany() class="btn btn-primary px-4 mr-3">Save company</button>
+            </div>
+        
+        </form>
+    </div>
+</div>

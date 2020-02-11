@@ -1,0 +1,5 @@
+<div class="card-deck row p-5 ">
+    <div class="col-3 mt-3" *ngFor="let coupon of coupons">
+        <app-coupon-card  [inPurchasePage]="true" [couponObj]="coupon"> </app-coupon-card>
+    </div>
+</div>

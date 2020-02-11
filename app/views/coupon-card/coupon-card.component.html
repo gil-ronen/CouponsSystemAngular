@@ -1,0 +1,19 @@
+<div class="card">
+    <img class="card-img-top" src="{{couponObj.image}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{couponObj.category}}</h5>
+        <h3 class="card-title">{{couponObj.title}}</h3>
+        <p class="card-text">{{couponObj.description}}</p>
+        <p class="card-text">only {{couponObj.amount}} coupons left!</p>
+        <p class="card-text">price: {{couponObj.price}} $</p>
+        <div *ngIf="inPurchasePage">
+            <button (click)="purchaseClicked()" type="button" class="btn btn-pill btn-warning">Purchase</button>
+        </div>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">Starting from: {{couponObj.startDate | date: 'dd/MM/yyyy'}}</small>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">Valid until: {{couponObj.endDate | date: 'dd/MM/yyyy'}}</small>
+    </div>
+</div>

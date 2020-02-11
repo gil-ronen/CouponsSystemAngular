@@ -1,0 +1,123 @@
+<div class="row  pl-5 pb-1 pr-5">
+    <div class="col-10">
+        <form>
+            <div class="row">
+                <div class="col-2">
+                    <label>Choose a coupon:</label>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Choose coupon to edit</mat-label>
+                            <mat-select (selectionChange)="ChooseCoupon($event)" name="option">
+                                <mat-option *ngFor="let option of couponsList" [value]="option">
+                                    {{option.title}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Choose Category:</label>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Choose Category</mat-label>
+                            <mat-select (selectionChange)="ChooseCategory($event)" name="option">
+                                <mat-option *ngFor="let option of categories" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Title:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Title" [(ngModel)]="selectedCoupon.title"
+                            [ngModelOptions]="{standalone: true}" name="title">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Description:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="textarea" class="form-control" placeholder="Description" [(ngModel)]="selectedCoupon.description"
+                            [ngModelOptions]="{standalone: true}" name="description">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Coupons amount:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Coupons amount" [(ngModel)]="selectedCoupon.amount"
+                            [ngModelOptions]="{standalone: true}" name="amount">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Price:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Price" [(ngModel)]="selectedCoupon.price"
+                            [ngModelOptions]="{standalone: true}" name="price">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Start Date:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="date" class="form-control" placeholder="Start Date" [(ngModel)]="selectedCoupon.startDate"
+                            name="startDate">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>End Date:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="date" class="form-control" placeholder="End Date" [(ngModel)]="selectedCoupon.endDate"
+                            name="endDate">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Image:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Image" [(ngModel)]="selectedCoupon.image"
+                            [ngModelOptions]="{standalone: true}" name="image">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" (click)=updateCoupon() class="btn btn-primary px-4 mr-3">Save coupon</button>
+                <button type="button" (click)=deleteCoupon() class="btn btn-primary px-4">Delete coupon</button>
+            </div>
+        
+        </form>
+    </div>
+</div>

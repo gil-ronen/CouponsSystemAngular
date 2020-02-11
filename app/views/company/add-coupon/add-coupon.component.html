@@ -1,0 +1,105 @@
+<div class="row  pl-5 pb-1 pr-5">
+    <div class="col-10">
+        <form>
+            <div class="row">
+                <div class="col-2">
+                    <label>Choose Category:</label>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Choose Category</mat-label>
+                            <mat-select (selectionChange)="ChooseCategory($event)" name="option">
+                                <mat-option *ngFor="let option of categories" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Title:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Title" [(ngModel)]="couponToAdd.title"
+                            [ngModelOptions]="{standalone: true}" name="title">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Description:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="textarea" class="form-control" placeholder="Description" [(ngModel)]="couponToAdd.description"
+                            [ngModelOptions]="{standalone: true}" name="description">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Coupons amount:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Coupons amount" [(ngModel)]="couponToAdd.amount"
+                            [ngModelOptions]="{standalone: true}" name="amount">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Price:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Price" [(ngModel)]="couponToAdd.price"
+                            [ngModelOptions]="{standalone: true}" name="price">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Start Date:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="date" class="form-control" placeholder="Start Date" [(ngModel)]="couponToAdd.startDate"
+                            name="startDate">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>End Date:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="date" class="form-control" placeholder="End Date" [(ngModel)]="couponToAdd.endDate"
+                            name="endDate">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label>Image:</label>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Image" [(ngModel)]="couponToAdd.image"
+                            [ngModelOptions]="{standalone: true}" name="image">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" (click)=addCoupon() class="btn btn-primary px-4 mr-3">Save coupon</button>
+            </div>
+        
+        </form>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-4">
+        <button type="button" (click)="showAllCompanies()" class="btn btn-primary">Show All</button>
+    </div>
+    <div class="col-4">
+        <div>
+            <mat-form-field>
+                <mat-label>Choose company</mat-label>
+                <mat-select (selectionChange)="ChooseCompany($event)" name="option">
+                    <mat-option *ngFor="let option of companiesListStatic" [value]="option">
+                        {{option.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordion">
+    <div class="card" *ngFor="let company of companies">
+        <div class="card-header" id="heading">
+            <h5 class="mb-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>
+                            {{company.name}}
+                        </h3>
+                    </div>
+                </div>
+            </h5>
+        </div>
+        <div class="card-body">
+            <h5>Email: {{company.email}}</h5>
+            <h5>
+                Password: {{company.password}}
+            </h5>
+            <h5>
+                Coupons:
+            </h5>
+            <div>
+                <div class="card-deck row p-5 ">
+                    <div class="col-3 mt-3" *ngFor="let coupon of company.coupons">
+                        <app-coupon-card [inPurchasePage]="false" [couponObj]="coupon"> </app-coupon-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

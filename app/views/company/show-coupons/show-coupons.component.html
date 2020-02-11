@@ -1,0 +1,40 @@
+
+<div class="row">
+
+    <div class="col-4">
+        <button type="button" (click)="getCompanyCoupons()" class="btn btn-primary">Show All</button>
+    </div>
+
+    <div class="col-4">
+        <div>
+            <mat-form-field>
+                <mat-label>Filter By Category</mat-label>
+                <mat-select (selectionChange)="ChooseCategory($event)" name="option">
+                    <mat-option *ngFor="let option of categories" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <form>
+            <div class="col-6">
+                <input type="number" class="form-control" placeholder="Filter By Max Price" [(ngModel)]="maxPrice"
+                    [ngModelOptions]="{standalone: true}" name="maxPrice">
+            </div>
+
+            <div class="col-6">
+                <button type="button" (click)="getCompanyCouponsByMaxPrice()" class="btn btn-primary">filter
+                    prices</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card-deck row p-5 ">
+    <div class="col-3 mt-3" *ngFor="let coupon of coupons">
+        <app-coupon-card [inPurchasePage]="false" [couponObj]="coupon"> </app-coupon-card>
+    </div>
+</div>
